@@ -1,16 +1,16 @@
 var pwd = "";
 
-function alpha (type){
+function alpha ($type){
     /* function to generate letter*/
     /* l = lower, u = upper, e = either */
     var lower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     var upper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-    var either = [lower,upper];
+    var either = lower.concat(upper);
     var rand, rtrn;
-    if (type = "l"){
+    if ($type == "l"){
         rand = Math.floor(Math.random() * 26 );
         rtrn = lower[rand];
-    } else if (type = "u"){
+    } else if ($type == "u"){
         rand = Math.floor(Math.random() * 26 );
         rtrn = upper[rand];
     } else {
@@ -18,6 +18,7 @@ function alpha (type){
         rtrn = either[rand];
     }
     pwd += rtrn;
+    console.log($type)
 }
 
 function numeric (){
@@ -52,9 +53,10 @@ function generate (){
     var _numeric = document.getElementById("number");
     var _symbol = document.getElementById("symbol");
     var _alpha = document.getElementById("alpha");
-    var _alphaType = document.getElementById("alphaType");
-    var _length = prompt("Length");
+    var _alphaType = document.getElementsByName("alphaType");
+    // var _length = prompt("Length");
     // var _length = parseInt(document.getElementById("length"));
+    var _length = 5;
 
     /* 
     _alpha, _numeric, _symbol are boolean
@@ -62,15 +64,15 @@ function generate (){
     _upper, lower, _either selected value if _alpha true
     */
 
-    /* clear previous passwords */
+    /* clear previous password */
     document.getElementById("result").innerHTML="";
 
     var req, reqA, req1, reqX;
     /*are letters needed?*/
     if(_alpha.checked){
-        if(_alphaType == "Lower"){
+        if(document.getElementById("lower").checked){
             reqA = "lower";
-        } else if(_alphaType == "Upper"){
+        } else if(document.getElementById("upper").checked){
             reqA = "upper";
         } else{
             reqA = "either";
@@ -146,6 +148,7 @@ function generate (){
     console.log(reqX);
     console.log(req1);
     console.log(reqA);
+    console.log(_alphaType);
 }
 
 function compilePW ($type, $length){
