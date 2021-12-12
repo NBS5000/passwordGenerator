@@ -11,4 +11,70 @@ body{
     background-repeat: repeat;
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    margin: 0 10%;
+    text-align: center;
+}
+.ulCheck{
+    display: none;
+}
+#alpha:checked ~ .ulCheck{
+    display: inline-block;
+}
+
+#length{
+    width:10%;
+    min-width: 55px;
+    text-align:center;
+}
+/*below webkits taken from w3schools: https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp*/
+/* Chrome, Safari, Edge, Opera */
+#length::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/*****/
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+li{
+    margin: 0;
+    padding: 0;
+}
+.checkArea{
+    width: 10%;
+    min-width: 90px;
+    text-align: left;
+    margin: 0 auto;
+}
+#result{
+    background-color: white;
+    width:80%;
+    min-width: 240px;
+    margin: 30px auto;
+    border: 1px solid grey;
+    line-height: 200%;
+    height: 50px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+}
+#hist{
+    line-height: 120%;
+}
+#last{
+    font-size: 125%;
+    
+}
+p{
+    margin: 0;
 }

@@ -50,7 +50,6 @@ function generate (){
     var _alpha = document.getElementById("alpha");
     var _length = parseInt(document.getElementById("length").value);
 
-    console.log(_length);
     /* 
     _alpha, _numeric, _symbol are boolean
     _length is integer
@@ -264,5 +263,6 @@ function compilePW ($type, $length){
         loop = loop + 1;
     }
     document.getElementById("result").innerHTML=pwd;
-    document.getElementById("hist").innerHTML = hist.concat(last,"<br/>");
+    document.getElementById("last").innerHTML = last;
+    document.getElementById("hist").innerHTML = last.concat("<br/>",hist);
 }
