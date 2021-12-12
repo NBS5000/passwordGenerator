@@ -1,0 +1,14 @@
+/****************/
+/**  main css  **/
+/**  password  **/
+/**  generator  */
+/** Steve Barry */
+/****************/
+
+body{
+    background-color: lightgrey;
+    background-image: url("../images/bg.png");
+    background-repeat: repeat;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
