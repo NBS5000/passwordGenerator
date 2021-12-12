@@ -1,5 +1,3 @@
-var pwd = "";
-
 function alpha ($type){
     /* function to generate letter*/
     /* l = lower, u = upper, e = either */
@@ -18,12 +16,10 @@ function alpha ($type){
         rtrn = either[rand];
     }
     pwd += rtrn;
-    console.log($type)
 }
 
 function numeric (){
     /* function to generate number */
-    /* l = lower, u = upper, e = either */
     var numbr = ["1","2","3","4","5","6","7","8","9","0"];
     var rand, rtrn;
 
@@ -35,8 +31,7 @@ function numeric (){
 
 function symbol (){
     /* function to generate symbol */
-    /* l = lower, u = upper, e = either */
-    var symb = ["-","_","!","@","#","$","%","^","&","*","+","~"];
+    var symb = ["-","_","!","@","#","$","%","^","&","*","+","~","?"];
     var leng = symb.length;
     var rand, rtrn;
 
@@ -49,23 +44,19 @@ function symbol (){
 
 function generate (){
     /* function to establish requirements*/
-
+    var last = document.getElementById("result");
     var _numeric = document.getElementById("number");
     var _symbol = document.getElementById("symbol");
     var _alpha = document.getElementById("alpha");
-    var _alphaType = document.getElementsByName("alphaType");
-    // var _length = prompt("Length");
-    // var _length = parseInt(document.getElementById("length"));
-    var _length = 5;
+    var _length = parseInt(document.getElementById("length").value);
 
+    console.log(_length);
     /* 
     _alpha, _numeric, _symbol are boolean
     _length is integer
     _upper, lower, _either selected value if _alpha true
     */
 
-    /* clear previous password */
-    document.getElementById("result").innerHTML="";
 
     var req, reqA, req1, reqX;
     /*are letters needed?*/
@@ -144,16 +135,15 @@ function generate (){
     
 
     compilePW (req, parseInt(_length));
-    console.log(req);
-    console.log(reqX);
-    console.log(req1);
-    console.log(reqA);
-    console.log(_alphaType);
 }
 
 function compilePW ($type, $length){
     /*function to run the loop and compile the password*/
     var loop = 1;
+    var last = document.getElementById("result").innerHTML;
+    var hist = document.getElementById("hist").innerHTML;
+    /* clear previous password */
+    pwd = "";
     while(loop <= $length){
 
         if($type == 1){
@@ -270,11 +260,9 @@ function compilePW ($type, $length){
             alpha("e");
         }
 
-
-
         /* exit*/
         loop = loop + 1;
     }
-
     document.getElementById("result").innerHTML=pwd;
+    document.getElementById("hist").innerHTML = hist.concat(last,"<br/>");
 }
