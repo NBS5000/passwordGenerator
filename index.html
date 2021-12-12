@@ -6,10 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/main.css"/>
-    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"/> -->
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
 </head>
 <body>
-    <p>test</p>
+
+<form action="javascript:generate()">
+    <input type="checkbox" id="alpha" value ="1" ><label for="alpha">Letters</label><br>
+
+    
+    <input type="checkbox" id="number" value="1"><label for="number">Numbers</label><br>
+    <input type="checkbox" id="symbol" value="1"><label for="symbol">Symbols</label><br>
+
+    <!-- <input type="number" id="length"><label for="length">Length</label><br> -->
+    <input type="submit" value="Generate">
+
+</form>
+
+
+    <!-- <button id="cricket"><a href="javascript:generate()">Generate</a></button> -->
+    <p id="result"></p>
+
+
+    <script type="text/javascript" src="./assets/js/generate.js"></script>
 </body>
 </html>

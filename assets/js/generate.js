@@ -1,4 +1,4 @@
-var pwd;
+var pwd = "";
 
 function alpha (type){
     /* function to generate letter*/
@@ -17,7 +17,7 @@ function alpha (type){
         rand = Math.floor(Math.random() * 52 );
         rtrn = either[rand];
     }
-    pwd = pwd + rtrn;
+    pwd += rtrn;
 }
 
 function numeric (){
@@ -29,7 +29,7 @@ function numeric (){
     rand = Math.floor(Math.random() * 10 );
     rtrn = numbr[rand];
 
-    pwd = pwd + rtrn;
+    pwd += rtrn;
 }
 
 function symbol (){
@@ -42,36 +42,50 @@ function symbol (){
     rand = Math.floor(Math.random() * leng );
     rtrn = symb[rand];
 
-    pwd = pwd + rtrn;
+    pwd += rtrn;
 }
 
 
-function generate (_alpha, _numeric, _upper, _lower, _either, _symbol, _length){
+function generate (){
     /* function to establish requirements*/
+
+    var _numeric = document.getElementById("number");
+    var _symbol = document.getElementById("symbol");
+    var _alpha = document.getElementById("alpha");
+    var _alphaType = document.getElementById("alphaType");
+    var _length = prompt("Length");
+    // var _length = parseInt(document.getElementById("length"));
 
     /* 
     _alpha, _numeric, _symbol are boolean
     _length is integer
     _upper, lower, _either selected value if _alpha true
     */
+
+    /* clear previous passwords */
+    document.getElementById("result").innerHTML="";
+
     var req, reqA, req1, reqX;
     /*are letters needed?*/
-    if(_alpha){
-        if(_lower){
+    if(_alpha.checked){
+        if(_alphaType == "Lower"){
             reqA = "lower";
-        } else if(_upper){
+        } else if(_alphaType == "Upper"){
             reqA = "upper";
         } else{
             reqA = "either";
         }
     }
     /* are numbers needed?*/
-    if(_numeric)
-    req1 = true
+    if(_numeric.checked ){
+        req1 = true
+    }
 
     /* are symbols required?*/
-    if(_symbol)
-    reqX = true;
+    if(_symbol.checked ){
+        reqX = true;
+    }
+
 
     /*number combination:
     1 is number only,
@@ -123,12 +137,15 @@ function generate (_alpha, _numeric, _upper, _lower, _either, _symbol, _length){
         req = 15;
     } else {
         alert("There was an error");
-        throw("bye, bye");
+        throw("bye, bye" + " " + req + " " + reqX + " " + req1 + " " + reqA );
     }
     
 
     compilePW (req, parseInt(_length));
-
+    console.log(req);
+    console.log(reqX);
+    console.log(req1);
+    console.log(reqA);
 }
 
 function compilePW ($type, $length){
@@ -138,66 +155,66 @@ function compilePW ($type, $length){
 
         if($type == 1){
             // number only,
-            pwd = pwd + numeric();
+            numeric();
 
         } else if($type == 2){
             // symbol only
-            pwd = pwd + symbol();
+            symbol();
             
         } else if($type == 3){
             // number & symbol
             if(Math.floor(Math.random()*10) % 2 == 0){
-                pwd = pwd + number();
+                numeric();
             } else{
-                pwd = pwd + symbol();
+                symbol();
             }
 
         } else if($type == 4){
             // number and lower case alpha
             if(Math.floor(Math.random()*10) % 2 == 0){
-                pwd = pwd + number();
+                numeric();
             } else{
-                pwd = pwd + alpha("l");
+                alpha("l");
             }
 
         } else if($type == 5){
             // number and upper case alpha
             if(Math.floor(Math.random()*10) % 2 == 0){
-                pwd = pwd + number();
+                numeric();
             } else{
-                pwd = pwd + alpha("u");
+                alpha("u");
             }
             
         } else if($type == 6){
             // number and either case alpha
             if(Math.floor(Math.random()*10) % 2 == 0){
-                pwd = pwd + number();
+                numeric();
             } else{
-                pwd = pwd + alpha("e");
+                alpha("e");
             }
             
         } else if($type == 7){
             // symbol and lower case alpha
             if(Math.floor(Math.random()*10) % 2 == 0){
-                pwd = pwd + symbol();
+                symbol();
             } else{
-                pwd = pwd + alpha("l");
+                alpha("l");
             }
             
         } else if($type == 8){
             // symbol and upper case alpha
             if(Math.floor(Math.random()*10) % 2 == 0){
-                pwd = pwd + symbol();
+                symbol();
             } else{
-                pwd = pwd + alpha("u");
+                alpha("u");
             }
             
         } else if($type == 9){
             // symbol and either case alpha
             if(Math.floor(Math.random()*10) % 2 == 0){
-                pwd = pwd + symbol();
+                symbol();
             } else{
-                pwd = pwd + alpha("e");
+                alpha("e");
             }
             
         } else if($type == 10){
@@ -206,11 +223,11 @@ function compilePW ($type, $length){
             var y = Math.floor(Math.random()* x.length);
             var z = x[y];
             if( z == 1){
-                pwd = pwd + numeric();
+                numeric();
             } else if(z == "X"){
-                pwd = pwd + symbol();
+                symbol();
             } else{
-                pwd = pwd + alpha("l");
+                alpha("l");
             }
             
         } else if($type == 11){
@@ -219,11 +236,11 @@ function compilePW ($type, $length){
             var y = Math.floor(Math.random()* x.length);
             var z = x[y];
             if( z == 1){
-                pwd = pwd + numeric();
+                numeric();
             } else if(z == "X"){
-                pwd = pwd + symbol();
+                symbol();
             } else{
-                pwd = pwd + alpha("u");
+                alpha("u");
             }
             
         } else if($type == 12){
@@ -232,22 +249,22 @@ function compilePW ($type, $length){
             var y = Math.floor(Math.random()* x.length);
             var z = x[y];
             if( z == 1){
-                pwd = pwd + numeric();
+                numeric();
             } else if(z == "X"){
-                pwd = pwd + symbol();
+                symbol();
             } else{
-                pwd = pwd + alpha("e");
+                alpha("e");
             }
             
         } else if($type == 13){
             // lower case alpha only
-            pwd = pwd + alpha("l");
+            alpha("l");
         } else if($type == 14){
             // upper case alpha only
-            pwd = pwd + alpha("u");
+            alpha("u");
         } else if($type == 15){
             // either case alpha only
-            pwd = pwd + alpha("e");
+            alpha("e");
         }
 
 
@@ -256,21 +273,5 @@ function compilePW ($type, $length){
         loop = loop + 1;
     }
 
-}
-
-
-
-///////////////////////////////////////////////////////////////
-
-var x = [1,"l","u","e"];
-var y = Math.floor(Math.random()* x.length);
-var z = x[y];
-if( z == 1){
-    pwd = pwd + numeric();
-} else if(z == "l"){
-    pwd = pwd + alpha("l");
-} else if (z == "u"){
-    pwd = pwd + alpha("u");
-} else{
-    pwd = pwd + alpha("e");
+    document.getElementById("result").innerHTML=pwd;
 }
