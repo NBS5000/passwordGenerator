@@ -42,6 +42,60 @@ function symbol (){
     pwd += rtrn;
 }
 
+function popUp (){
+    var x;
+    while(!x){
+        var _len = prompt("How long do you want it to be?");
+        if(parseInt(_len) && _len >= 8 && _len <= 128){
+            x = 1;
+        }else{
+            alert("Please enter a valid number between 8 and 128");
+        }
+    }
+    document.getElementById("length").value = parseInt(_len);
+    var x = "";
+    while(!x){
+        var _num = confirm("Do you want to use Numbers?");
+        if(_num){
+            x = 1;
+            document.getElementById("number").checked = true;
+        }else{
+            document.getElementById("number").checked = false;
+        }
+        var _sym = confirm("Do you want to use Symbols?");
+        if(_sym){
+            x = 1;
+            document.getElementById("symbol").checked = true;
+        }else{
+            document.getElementById("symbol").checked = false; 
+        }
+        var _let = confirm("How about Letters?");
+        if(_let){
+            document.getElementById("alpha").checked = true;
+            var y = "";
+            while(!y){
+                var abc = prompt("Would you like your letters to be (u)pper case, (l)ower case, or (e)ither?");
+                if(abc.toLowerCase() == "u" || abc.toLowerCase() == "l" || abc.toLowerCase() == "e"){
+                    y = 1;
+                }else{
+                    alert("Please enter 'u' for Upper case, 'l' for Lower case, or 'e' for Either")
+                }
+            }
+            abc = abc.toLowerCase();
+            if(abc == "l"){
+                document.getElementById("lower").checked = true;
+            }else if (abc == "u"){
+                document.getElementById("upper").checked = true;
+            }else{
+                document.getElementById("either").checked = true;
+            }
+            x = 1;
+        }else{
+            document.getElementById("alpha").checked = false;
+        }
+    }
+    generate();
+}
 
 function generate (){
     /* function to establish requirements*/

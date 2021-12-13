@@ -122,3 +122,14 @@ form{
     text-align: center;
     white-space: nowrap;
 }
+#btnPrompts{
+    background-color: darkblue;
+    margin-top: 20px;
+    color: white;
+    height: 40px;
+    width: 150px;
+    border-radius: 50px;
+    font-size: 80%;
+    box-shadow: none;
+    border: none;
+}
