@@ -10,7 +10,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
 </head>
 <body>
-    <h1>Number Generator</h1>
+    <h1>Password Generator</h1>
 
 
 <form action="javascript:generate()">
@@ -30,14 +30,17 @@
 
 
 
-    <input type="submit" value="Generate">
+    <input type="submit" value="Generate Password" id="button">
 
 </form>
 
 
-    <!-- <button id="cricket"><a href="javascript:generate()">Generate</a></button> -->
+    <h2>Your password</h2>
     <p id="result"></p><br>
+    <h2>Previous password</h2>
     <p id="last"></p><br>
+    <hr/>
+    <h3>Password history</h3>
     <p id="hist"></p>
 
     <script type="text/javascript" src="./assets/js/generate.js"></script>

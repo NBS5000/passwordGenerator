@@ -140,6 +140,7 @@ function generate (){
 function compilePW ($type, $length){
     /*function to run the loop and compile the password*/
     var loop = 1;
+    /* track history */
     var last = document.getElementById("result").innerHTML;
     var hist = document.getElementById("hist").innerHTML;
     /* clear previous password */
@@ -263,6 +264,7 @@ function compilePW ($type, $length){
         /* exit*/
         loop = loop + 1;
     }
+
     document.getElementById("result").innerHTML=pwd;
     document.getElementById("last").innerHTML = last;
     document.getElementById("hist").innerHTML = last.concat("<br/>",hist);
