@@ -229,15 +229,23 @@ function compilePW ($type, $length){
             
         } else if($type == 3){
             // number & symbol
-            if(Math.floor(Math.random()*10) % 2 == 0){
+            if(loop == 1){
                 numeric();
-            } else{
+            }else if(loop==2){
+                symbol();
+            }else if(Math.floor(Math.random()*10) % 2 == 0){
+                numeric();
+            }else{
                 symbol();
             }
 
         } else if($type == 4){
             // number and lower case alpha
-            if(Math.floor(Math.random()*10) % 2 == 0){
+            if(loop == 1){
+                numeric();
+            }else if(loop==2){
+                alpha("l");
+            }else if(Math.floor(Math.random()*10) % 2 == 0){
                 numeric();
             } else{
                 alpha("l");
@@ -245,7 +253,11 @@ function compilePW ($type, $length){
 
         } else if($type == 5){
             // number and upper case alpha
-            if(Math.floor(Math.random()*10) % 2 == 0){
+            if(loop == 1){
+                numeric();
+            }else if(loop==2){
+                alpha("u");
+            }else if(Math.floor(Math.random()*10) % 2 == 0){
                 numeric();
             } else{
                 alpha("u");
@@ -253,7 +265,11 @@ function compilePW ($type, $length){
             
         } else if($type == 6){
             // number and either case alpha
-            if(Math.floor(Math.random()*10) % 2 == 0){
+            if(loop == 1){
+                numeric();
+            }else if(loop==2){
+                alpha("e");
+            }else if(Math.floor(Math.random()*10) % 2 == 0){
                 numeric();
             } else{
                 alpha("e");
@@ -261,7 +277,11 @@ function compilePW ($type, $length){
             
         } else if($type == 7){
             // symbol and lower case alpha
-            if(Math.floor(Math.random()*10) % 2 == 0){
+            if(loop == 1){
+                symbol();
+            }else if(loop==2){
+                alpha("l");
+            }else if(Math.floor(Math.random()*10) % 2 == 0){
                 symbol();
             } else{
                 alpha("l");
@@ -269,7 +289,11 @@ function compilePW ($type, $length){
             
         } else if($type == 8){
             // symbol and upper case alpha
-            if(Math.floor(Math.random()*10) % 2 == 0){
+            if(loop == 1){
+                symbol();
+            }else if(loop==2){
+                alpha("u");
+            }else if(Math.floor(Math.random()*10) % 2 == 0){
                 symbol();
             } else{
                 alpha("u");
@@ -277,7 +301,11 @@ function compilePW ($type, $length){
             
         } else if($type == 9){
             // symbol and either case alpha
-            if(Math.floor(Math.random()*10) % 2 == 0){
+            if(loop == 1){
+                symbol();
+            }else if(loop==2){
+                alpha("e");
+            }else if(Math.floor(Math.random()*10) % 2 == 0){
                 symbol();
             } else{
                 alpha("e");
@@ -288,7 +316,13 @@ function compilePW ($type, $length){
             var x = [1,"X","l"];
             var y = Math.floor(Math.random()* x.length);
             var z = x[y];
-            if( z == 1){
+            if(loop == 1){
+                numeric();
+            }else if(loop==2){
+                symbol();
+            }else if(loop == 3){
+                alpha("l");
+            }else if( z == 1){
                 numeric();
             } else if(z == "X"){
                 symbol();
@@ -301,7 +335,13 @@ function compilePW ($type, $length){
             var x = [1,"X","u"];
             var y = Math.floor(Math.random()* x.length);
             var z = x[y];
-            if( z == 1){
+            if(loop == 1){
+                numeric();
+            }else if(loop==2){
+                symbol();
+            }else if(loop == 3){
+                alpha("u");
+            }else if( z == 1){
                 numeric();
             } else if(z == "X"){
                 symbol();
@@ -314,7 +354,13 @@ function compilePW ($type, $length){
             var x = [1,"X","e"];
             var y = Math.floor(Math.random()* x.length);
             var z = x[y];
-            if( z == 1){
+            if(loop == 1){
+                numeric();
+            }else if(loop==2){
+                symbol();
+            }else if(loop == 3){
+                alpha("e");
+            }else if( z == 1){
                 numeric();
             } else if(z == "X"){
                 symbol();
