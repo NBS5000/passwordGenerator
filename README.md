@@ -22,7 +22,7 @@ Provide a solution so that the user can set various criteria and be provided wit
 
 **ACTION**
 
-A full review of the code, resulting in:
+Writing of a solution to resolve the situation, including:
 * Layout
   * *Layout is responsive and functional on various screen sizes*
   * *Simple, yet attractive design*
@@ -32,6 +32,7 @@ A full review of the code, resulting in:
   * *Favicon designed and added*
   * *Thorough comments*
   * *Intuitive design with error handling and user feedback if mistakes made*
+  * *Different options available for the user to generate their requirements*
 * Javascript
   * *Error free performance*
   * *Multiple functions to separate aspects of code*
