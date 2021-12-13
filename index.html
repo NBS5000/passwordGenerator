@@ -14,7 +14,7 @@
 
 
 <form action="javascript:generate()">
-    <label for="length" class="directions">Required password length</label><br/><input type="number" id="length" required><br>
+    <label for="length" class="directions">Required password length</label><br/><input type="number" id="length" required min="8" max="128"><br>
     <label for="checkbox" class="directions" id="selectChar">Select Character Types</label><br/>
     <div class="checkArea">
         <input type="checkbox" id="number"><label for="number">Numbers</label><br>
