@@ -43,6 +43,8 @@ function symbol (){
 }
 
 function popUp (){
+    /* function to get requirements using prompts instead, to comply with homework requirements*/
+    /* x var is to ensure a requirement is set, exits loop when valid number is entered */
     var x;
     while(!x){
         var _len = prompt("How long do you want it to be?");
@@ -52,8 +54,11 @@ function popUp (){
             alert("Please enter a valid number between 8 and 128");
         }
     }
+    /* set parameter and clear x*/
     document.getElementById("length").value = parseInt(_len);
     var x = "";
+    /* set x when char type has been selected, can be all or only one, but at least one has to be selected*/
+    /* the else statement clears selection in case it was set on previous run */
     while(!x){
         var _num = confirm("Do you want to use Numbers?");
         if(_num){
@@ -69,9 +74,11 @@ function popUp (){
         }else{
             document.getElementById("symbol").checked = false; 
         }
+        /* if letters are selected, set requirement and then establish what type of letters needed*/
         var _let = confirm("How about Letters?");
         if(_let){
             document.getElementById("alpha").checked = true;
+            /* y used to established letter type */
             var y = "";
             while(!y){
                 var abc = prompt("Would you like your letters to be (u)pper case, (l)ower case, or (e)ither?");
@@ -93,7 +100,11 @@ function popUp (){
         }else{
             document.getElementById("alpha").checked = false;
         }
+        if(!x){
+            alert("Please select at least one character type!");
+        }
     }
+    /* once fields are completed, run generate script*/
     generate();
 }
 
