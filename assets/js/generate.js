@@ -79,6 +79,13 @@ function generate (){
         reqX = true;
     }
 
+    if(!reqA && !req1 && !reqX){
+        alert("Please ensure you have selected at least one character type.");
+        document.getElementById("selectChar").style.color ="red";
+        return;
+    }else{
+        document.getElementById("selectChar").style.color ="black";
+    }
 
     /*number combination:
     1 is number only,
@@ -267,5 +274,11 @@ function compilePW ($type, $length){
 
     document.getElementById("result").innerHTML=pwd;
     document.getElementById("last").innerHTML = last;
-    document.getElementById("hist").innerHTML = last.concat("<br/>",hist);
+
+    if(!hist){
+        document.getElementById("hist").innerHTML = last.concat(hist);
+    }else{
+        document.getElementById("hist").innerHTML = last.concat("<hr style='width:50%'/>",hist);
+    }
+
 }

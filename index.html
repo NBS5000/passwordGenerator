@@ -14,16 +14,17 @@
 
 
 <form action="javascript:generate()">
-    <label for="length">Length</label><br/><input type="number" id="length" required><br>
+    <label for="length" class="directions">Required password length</label><br/><input type="number" id="length" required><br>
+    <label for="checkbox" class="directions" id="selectChar">Select Character Types</label><br/>
     <div class="checkArea">
-    <input type="checkbox" id="number"><label for="number">Numbers</label><br>
-    <input type="checkbox" id="symbol"><label for="symbol">Symbols</label><br>
-    <input type="checkbox" id="alpha"><label for="alpha">Letters</label><br>
-    <ul class="ulCheck">
-        <li><input type="radio" id="lower" name="alphaType" class="aType liCheck"><label for="lower" class="aType">Lower</label></li>
-        <li><input type="radio" id="upper" name="alphaType" class="aType liCheck"><label for="upper" class="aType">Upper</label></li>
-        <li> <input type="radio" id="either" name="alphaType" class="aType liCheck"><label for="either" class="aType">Either</label><br class="aType"/></li>
-    </ul>
+        <input type="checkbox" id="number"><label for="number">Numbers</label><br>
+        <input type="checkbox" id="symbol"><label for="symbol">Symbols</label><br>
+        <input type="checkbox" id="alpha"><label for="alpha">Letters</label><br>
+        <ul class="ulCheck">
+            <li><input type="radio" id="lower" name="alphaType" class="aType liCheck"><label for="lower" class="aType">Lower</label></li>
+            <li><input type="radio" id="upper" name="alphaType" class="aType liCheck"><label for="upper" class="aType">Upper</label></li>
+            <li> <input type="radio" id="either" name="alphaType" class="aType liCheck"><label for="either" class="aType">Either</label><br class="aType"/></li>
+        </ul>
     </div>
     
    
