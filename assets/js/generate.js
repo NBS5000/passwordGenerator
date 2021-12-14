@@ -383,13 +383,44 @@ function compilePW ($type, $length){
         loop = loop + 1;
     }
 
+    var test = randomise(pwd);
+    console.log("Generated: " + pwd);
+    console.log("Randomised: " +test);
+    console.log(" - - - - - - - ")
+    pwd = test;
+    
     document.getElementById("result").innerHTML=pwd;
     document.getElementById("last").innerHTML = last;
-
     if(!hist){
         document.getElementById("hist").innerHTML = last.concat(hist);
     }else{
         document.getElementById("hist").innerHTML = last.concat("<hr style='width:50%'/>",hist);
     }
 
+}
+
+function randomise($pwd){
+    var _new = "";
+    var __len = $pwd.length;
+    var __loop = 0;
+    while(__loop < __len){
+        /* get current length of old password (shortened after each loop )*/
+        var l = __len - __loop;
+        /* pick random char from old pwd*/
+        var r = Math.floor(Math.random() * l);
+
+        var char = $pwd.charAt(r);
+        _new = _new.concat(char);
+        $pwd = $pwd.replace(char,"");
+        /* display for testing */
+        // console.log(_new);
+        // console.log($pwd);
+        // console.log(r);
+        /* exit */
+        __loop = __loop+1;
+
+
+    }
+    return _new;
+    
 }
