@@ -70,6 +70,11 @@ The end code is stored on Github, and publicly available and viewable. Accessibi
 As the acceptance criteria has been met, the task is now complete. 
 
 *As a caveat, the solution was originally built before fully checking the requirements, the requirements of prompts were then incorporated into the existing solution.*
+> There is a new Google feature named FLoc that is generating the below error. This is not a result of the performance or design of the site.
+> 
+> ![Screenshot of Google FLoC error](./assets/images/floc.PNG "Screenshot of Google FLoC error")
+> 
+> [Google FLoC](https://techcrunch.com/2021/03/30/google-starts-trialling-its-floc-cookie-alternative-in-chrome/)
 
 You can view the finished product [HERE](https://nbs5000.github.io/passwordGenerator/)
 
