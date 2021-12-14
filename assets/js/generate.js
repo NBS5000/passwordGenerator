@@ -131,6 +131,7 @@ function generate (){
         } else if(document.getElementById("upper").checked){
             reqA = "upper";
         } else{
+            document.getElementById("either").checked = true;
             reqA = "either";
         }
     }
