@@ -36,9 +36,14 @@ Writing of a solution to resolve the situation, including:
 * Javascript
   * *Error free performance*
   * *Multiple functions to separate aspects of code*
+  * *Thorough comments*
+  * *Console log displays generated password and the randomised password*
 * GIT
   * *Numerous commits to track changes in code*
   * *Code added to public repository and Github Pages for public viewing*
+* Functionality
+  * *Guarantee of at least one of the selected characters appearing in the password*
+  * *Password semi created at random, then characters within the password randomised*
 
 **RESULT**
 
@@ -62,7 +67,9 @@ The end code is stored on Github, and publicly available and viewable. Accessibi
 
 ## <span style="color:green"> The Outcome</span>
 
-As the acceptance criteria has been met, the task is now complete.
+As the acceptance criteria has been met, the task is now complete. 
+
+*As a caveat, the solution was originally built before fully checking the requirements, the requirements of prompts were then incorporated into the existing solution.*
 
 You can view the finished product [HERE](https://nbs5000.github.io/passwordGenerator/)
 

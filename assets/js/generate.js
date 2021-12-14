@@ -384,9 +384,9 @@ function compilePW ($type, $length){
     }
 
     var test = randomise(pwd);
-    console.log("Generated: " + pwd);
-    console.log("Randomised: " +test);
-    console.log(" - - - - - - - ")
+    // console.log("Generated: " + pwd);
+    // console.log("Randomised: " +test);
+    // console.log(" - - - - - - - ")
     pwd = test;
     
     document.getElementById("result").innerHTML=pwd;
